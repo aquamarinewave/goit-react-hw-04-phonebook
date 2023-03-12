@@ -13,7 +13,7 @@ const initialValues = {
 
 const Phonebook = ({addNewContact}) => {
 
- const handleSubmit = (values, { resetForm }) => {
+  const handleSubmit = (values, { resetForm }) => {
     addNewContact({ ...values, id: nanoid() });
     resetForm();
   };
