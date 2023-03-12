@@ -7,7 +7,9 @@ import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
 const App = () => {
-  const [contacts, setContacts] = useState(JSON.parse(window.localStorage.getItem('contacts')) ?? []);
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(window.localStorage.getItem('contacts')) ?? []
+  });
   const [filter, setFilter] = useState('');
 
   const formSubmitHandler = newContact => {
